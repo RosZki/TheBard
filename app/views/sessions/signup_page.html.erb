@@ -1,0 +1,24 @@
+<div class="middleform signup">
+<div id="header">
+	The Bard
+	<img src=<%= image_path("logo.png")%> id="logo"></img>
+</div>
+<%= form_tag('/signup', method: :post) do %>
+	<table>
+	<tr>
+	<td> Name: </td><td> <input type='text' name='name' class='tf'/> </td>
+	</tr>
+	<tr>
+	<td> Username: </td><td><input type='text' name='username' class='tf'/> </td>
+	</tr>
+	<tr>
+	<td> Password:  </td><td><input type='password' name='password' class='tf'/> </td>
+	</tr>
+	<tr>
+	<td> Confirm Password:  </td><td><input type='password' name='password_confirm' class='tf'/> </div>
+	</tr>
+	</table>
+	</br> <input type='submit' value='Sign Up' class="bt2"/>
+<% end %>
+<a href='/'>Back</a>
+</div>

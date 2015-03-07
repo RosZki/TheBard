@@ -1,0 +1,25 @@
+<body style="background-image:none;">
+
+<center>
+<a href='playlists'>Back</a> <br><h1><%= @playlist.name %></h1></center>
+
+<center><audio preload></audio></center>
+<div id="wrapper">
+<ol>
+<% @playlist.tracks.each do |track| %>
+	<li>
+	<a href="#" data-src= <%= track.audio.url %> ><%= track.display_name %></a>
+	</li>
+<% end %>
+</ol>
+</div>
+<div id="shortcuts">
+      <div>
+        <h1>Keyboard shortcuts:</h1>
+        <p><em>&rarr;</em> Next track</p>
+        <p><em>&larr;</em> Previous track</p>
+        <p><em>Space</em> Play/pause</p>
+  </div>
+</div>
+
+</body>

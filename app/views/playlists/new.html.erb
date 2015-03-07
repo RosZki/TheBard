@@ -1,0 +1,13 @@
+<div class="middleform cplaylist">
+<div id="header">
+		The Bard
+		<img src=<%= image_path("logo.png")%> id="logo"></img>
+</div>
+<%= form_for @playlist, html: { multipart: true } do |playlist| %>
+	Playlist <%= playlist.label :name%>:
+	<%= playlist.text_field :name, :class => "tf" %>
+	<%= playlist.submit "Create" %>
+<%end%>
+<a href="/playlists">Back</a>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="middleform vplaylist">
+<div id="header">
+		The Bard
+		<img src=<%= image_path("logo.png")%> id="logo"></img>
+</div>
+<%= session[:name] %>'s Playlists 
+<%= link_to "+", new_playlist_path %><br />
+<table>
+<% @playlists.each_with_index do |playlist, index| %>
+	<tr>
+		<td><%= index+1 %> - </td>
+		<td><%= playlist.name %></td>
+		<% if !playlist.tracks.empty? %>
+		<td><%= button_to "Play", {:controller => "playlists", :action => "player", :id => playlist.id}, {class: 'play_button'} %></td>
+		<% else %>
+		<td></td>
+		<% end %>
+		<td><%= button_to "Edit", {:controller => "playlists", :action => "edit", :id => playlist.id}, method: :get %></td>
+		<td><%= button_to "Delete",  playlist, method: :delete, confirm: "Are you sure that you wish to delete #{playlist.name}?" %></td>
+    </tr>
+<% end %>
+</table>
+<a href="/"> Back </a>
+</div>

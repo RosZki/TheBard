@@ -1,0 +1,12 @@
+<div class="middleform login">
+<div id="header">
+	The Bard
+	<img src=<%= image_path("logo.png")%> id="logo"></img>
+</div>
+<%= form_tag('/login', method: :post) do %>
+	<div> Username: <input type='text' name='username' class="tf" /></div>
+	<div> Password: <input type='password' name='password' class="tf" /></div>
+	<input type='submit' value='Login' class="bt" />
+<% end %>
+<a href='signup'>Sign Up</a>
+</div>
